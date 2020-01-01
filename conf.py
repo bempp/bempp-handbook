@@ -21,6 +21,7 @@ project = 'The Bempp Handbook'
 copyright = '2020, Timo Betcke'
 author = 'Timo Betcke'
 
+master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
 
