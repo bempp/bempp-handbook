@@ -48,7 +48,8 @@ on Mac OS, Linux and the Windows Subsystem for Linux. The only Requirements
 is a working `conda` installation.
 
 First, if not already done, enable the conda-forge channel.
-::
+
+.. code-block:: shell
 
     conda config --add channels conda-forge
     conda config --set channel_priority strict

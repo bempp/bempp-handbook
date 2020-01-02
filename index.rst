@@ -35,6 +35,7 @@ This handbook focuses completely on Bempp-cl.
    :caption: Table of Contents:
 
    content/installation
+   content/concepts
 
 
 Indices and tables

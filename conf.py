@@ -24,12 +24,14 @@ author = 'Timo Betcke'
 master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
+highlight_language = 'python'
+
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+extensions = ['sphinxcontrib.katex']
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -50,7 +52,8 @@ html_title = 'The Bempp Handbook'
 html_style = 'css/custom.css'
 html_sidebars = { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
 html_theme_options = {
-        'display_version': False
+        'display_version': False,
+        'collapse_navigation': False,
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,
