@@ -156,6 +156,8 @@ to enable plotting from command line sessions change the plot backend as
 
     bempp.api.PLOT_BACKEND = 'gmsh'
 
+This requires Gmsh to be available in the system path.
+
 
 
 

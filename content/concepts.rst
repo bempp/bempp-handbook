@@ -13,6 +13,7 @@ of each of these concepts.
 .. toctree::
 
    grids
+   function_spaces
 
 
 
