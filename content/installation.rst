@@ -44,7 +44,7 @@ Quick-Installation
 ==================
 
 The quick installation gets you up and running on a CPU based system. It works
-on Mac OS, Linux and the Windows Subsystem for Linux. The only Requirements
+on Mac OS, Linux and the Windows Subsystem for Linux. The only requirement
 is a working `conda` installation.
 
 First, if not already done, enable the conda-forge channel.
@@ -65,29 +65,47 @@ with Numba and Python 3.8 that effects Bempp-cl. On older versions of
 `conda` it may be necessary to use `source activate` instead of
 `conda activate`.
 
-We can now install all necessary dependencies.
+We can now install Bempp-cl with
 ::
 
-    conda install numpy, scipy, numba, pyopencl, plotly, meshio, pocl
+    conda install bempp-cl
 
-It is also advisable to have the `Gmsh binary <https://gmsh.info>`_ somewhere
-in the system path as it is used to discretise on the fly some of the example
-shapes that come with the library. Gmsh can be installed directly from the
-website on Windows and Mac systems or through the package manager on most
-Linux distributions.
-
-Finally, we can install Bempp-cl using `pip`.
+This installs Bempp-cl with a minimal set of dependencies that are
+required to run the software. However, we strongly recommend to also
+install Gmsh, Matplotlib, and Jupyter. This can be done via
 ::
 
-    pip install Bempp-cl
+    conda install gmsh, matplotlib, jupyter
+
 
 Using other compute devices
 ===========================
 
 Any compute device that provides a valid ICD can
 in principle be used with Bempp. However, if Bempp is installed within a conda
-environment these may not be seen by the installation. A simple workaround is
-as follows. First, find out where your conda environment is installed,
+environment these may not be seen by the installation. The reason is that conda
+expects files in different locations than may be provided by the system. The
+following two solutions have been tested on Linux based systems.
+
+Set the ICD location via environment variable
+---------------------------------------------
+
+Typically, GPU vendors install ICDs in `/etc/OpenCL/vendors`. You can
+set this as default search path for ICD files with the command
+::
+
+    export OPENCL_VENDOR_PATH=/etc/OpenCL/vendors
+
+The drawback is that as long as this variable is set the Pocl driver
+provided through conda is not visible any more.
+
+Copy ICD files into the correct location
+----------------------------------------
+
+An alternative to setting an environment variable is to copy the system
+ICD files into a location that conda knows.
+
+First, find out where your conda environment is installed,
 using e.g. the command `which python` when the environment is active.
 The output of the command may be something like
 ::

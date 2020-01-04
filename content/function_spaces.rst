@@ -45,3 +45,9 @@ The local multipliers :math:`c_{i, j}` are all 1, and the indices
 :math:`\delta_{i, j}^{\ell}` are 1 for all local basis functions whose
 nonzero vertex is identical to the global vertex :math:`p_{\ell}`.
 
+Defining a function space and basic properties
+==============================================
+
+To define a function space we require a grid object. We can then use
+the `function_space` method to intitialise a new space.
+
