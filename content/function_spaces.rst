@@ -37,7 +37,7 @@ are defined as continuous, elementwise linear functions such that
                                \end{cases}.
 
 Here, :math:`p_k` is the kth vertex in the grid. The local basis
-functions :math:`\Phi_{i, j}^{loc}`, :math:`j=1, \dots, 3` on element i 
+functions :math:`\Phi_{i, j}^{loc}`, :math:`j=1, \dots, 3` on element i
 are defined as linear functions which are 1 on the jth vertex of the
 element and 0 on the other two vertices.
 
@@ -45,9 +45,23 @@ The local multipliers :math:`c_{i, j}` are all 1, and the indices
 :math:`\delta_{i, j}^{\ell}` are 1 for all local basis functions whose
 nonzero vertex is identical to the global vertex :math:`p_{\ell}`.
 
-Defining a function space and basic properties
-==============================================
+Defining a function space
+=========================
 
 To define a function space we require a grid object. We can then use
-the `function_space` method to intitialise a new space.
+the `function_space` method to intitialise a new space. To define
+a space of piecewise constant functions we use the command
+::
+
+    spce = bempp.api.function_space(grid, "DP", 0)
+
+The parameter `DP` is short for Discontinuous Polynomial. The number 0 is
+the degree of the polynomial space. To define a space of continuous, piecewise
+linear functions use
+::
+
+    space = bempp.api.function_space(grid, "P", 1)
+
+Bempp-cl only supports function spaces up to degree 1. This is an important
+difference to earlier versions that also supported higher order spaces.
 

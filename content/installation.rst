@@ -75,7 +75,7 @@ required to run the software. However, we strongly recommend to also
 install Gmsh, Matplotlib, and Jupyter. This can be done via
 ::
 
-    conda install gmsh, matplotlib, jupyter
+    conda install gmsh matplotlib jupyter
 
 
 Using other compute devices
