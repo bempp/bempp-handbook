@@ -1,5 +1,4 @@
-**************
-Basic Concepts
+Basic concepts
 **************
 
 The Bempp data structures closely follow the underlying Mathematics.
@@ -12,8 +11,4 @@ of each of these concepts.
 
 .. toctree::
 
-   grids
-   function_spaces
-
-
-
+   grids_and_functions

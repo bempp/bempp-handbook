@@ -1,5 +1,6 @@
-***************
-Function Spaces
+.. _function-spaces:
+
+Function spaces
 ***************
 
 Function spaces form a central part of Bempp. They store information about
