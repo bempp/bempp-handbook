@@ -1,5 +1,6 @@
+******************
 Working with grids
-==================
+******************
 
 This tutorial demonstrates basic features of dealing with grids in Bempp.
 Simple grids can be easily created using built-in commands.
@@ -11,15 +12,17 @@ installed and the command `gmsh` must be available in the path.
 Bempp currently only supports grid consisting of flat surface triangles.
 
 Creating basic grid objects
----------------------------
+===========================
 
-Let us create our first grid, a simple sphere. We first import bempp.
+We first import Bempp.
 We will also import Numpy as it will be needed later.
 ::
 
     import bempp.api
     import numpy as np
 
+Built-in grids
+--------------
 The following command creates the sphere grid.
 ::
 
@@ -34,8 +37,13 @@ element diameter. For example, we can create a unit sphere
 with element diameter :math:`h=0.1` with the command
 ::
 
-    grid = bempp.api.shapes.sphere(h=.1)
+    grid = bempp.api.shapes.sphere(h=0.1)
 
+Full documentation of Bempp's available built-in grids can be found
+`here <https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/shapes/index.html>`_.
+
+Importing a grid
+----------------
 To import an existing grid file Bempp provides an `import_grid` command, e.g.
 ::
 
@@ -82,7 +90,7 @@ else was specified. This corresponds to the call
     grid = bempp.api.Grid(vertices, elements, domain_indices=[0, 0])
 
 Querying grid information
--------------------------
+=========================
 
 One can directly query a number of quantities about grids. In the following
 we demonstrate some of them.
@@ -135,7 +143,7 @@ A number of other properties are defined, which are explained in more detail
 in the object description for the Grid class.
 
 Plotting and exporting grids
-----------------------------
+============================
 
 To export a grid use the `export` command.
 ::
@@ -150,15 +158,10 @@ In order to plot a grid we can simply use the command
 
     grid.plot()
 
-However, by default this works only within Jupyter Notebooks. In order
+However, by default this works only within Jupyter notebooks. In order
 to enable plotting from command line sessions change the plot backend as
 ::
 
     bempp.api.PLOT_BACKEND = 'gmsh'
 
 This requires Gmsh to be available in the system path.
-
-
-
-
-
