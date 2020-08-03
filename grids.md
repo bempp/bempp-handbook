@@ -1,5 +1,6 @@
 ---
 title: Working with grids
+layout: handbook
 ---
 
 This tutorial demonstrates basic features of dealing with grids in Bempp.

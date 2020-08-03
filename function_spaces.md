@@ -1,5 +1,6 @@
 ---
 title: Function spaces
+layout: handbook
 ---
 
 Function spaces form a central part of Bempp. They store information about

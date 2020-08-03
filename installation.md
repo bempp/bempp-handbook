@@ -1,5 +1,6 @@
 ---
 title: Installation
+layout: handbook
 ---
 
 ### Requirements

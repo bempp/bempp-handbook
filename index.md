@@ -1,5 +1,10 @@
 ---
 title: The Bempp Handbook
+layout: handbook
+children:
+  - installation.md
+  - grids_and_functions.md
+  - concepts.md
 ---
 
 Bempp is a platform for the assembly of boundary integral operators in Python.
@@ -25,9 +30,5 @@ specific dense evaluator mode on GPUs).
 Support for large-scale problems is one of the main working areas for Bempp-cl.
 This handbook focuses completely on Bempp-cl.
 
-Contents
-========
-+ Grids
-    + [Working with grids](grids.md)
-+ Function spaces
-    + [Function spaces](function_spaces.md)
+## Contents
+{% include _handbook_contents.html %}

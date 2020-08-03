@@ -1,5 +1,6 @@
 ---
 title: Grid functions
+layout: handbook
 ---
 
 In Bempp, data on a given grid is represented as a grid function object.

@@ -1,5 +1,6 @@
 ---
 title: Basic concepts
+layout: handbook
 ---
 
 The Bempp data structures closely follow the underlying Mathematics.
