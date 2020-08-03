@@ -1,5 +1,0 @@
-/* This line is theme specific - it includes the base theme CSS */
-@import 'theme.css';       /* for the Read the Docs theme */
-
-.wy-side-nav-search { background-color: #e27b36;}
-.wy-nav-top { background: #e27b36;}
