@@ -1,6 +1,9 @@
 ---
-title: Basic concepts
+title: A Bempp User's Introduction to Boundary Element Methods
 layout: handbook
+children:
+  - theory/function_spaces.md
+  - theory/discrete_function_spaces.md
 ---
 
 The Bempp data structures closely follow the underlying Mathematics.

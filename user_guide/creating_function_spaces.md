@@ -1,5 +1,5 @@
 ---
-title: Function spaces
+title: Defining Function Spaces
 layout: handbook
 ---
 

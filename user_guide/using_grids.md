@@ -1,5 +1,5 @@
 ---
-title: Working with grids
+title: Working with Grids
 layout: handbook
 ---
 
