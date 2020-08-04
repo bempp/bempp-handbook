@@ -2,9 +2,8 @@
 title: The Bempp Handbook
 layout: handbook
 children:
-  - installation.md
-  - grids_and_functions.md
-  - concepts.md
+  - using_bempp.md
+  - theory.md
 ---
 
 Bempp is a platform for the assembly of boundary integral operators in Python.
