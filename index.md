@@ -2,6 +2,7 @@
 title: The Bempp Handbook
 layout: handbook
 children:
+  - introduction.md
   - user_guide/index.md
   - theory/index.md
 ---

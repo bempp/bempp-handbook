@@ -1,4 +1,5 @@
 ---
-title: Available Grids
+title: Introduction
 layout: handbook
 ---
+
