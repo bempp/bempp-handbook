@@ -47,7 +47,7 @@ grid_fun = bempp.api.GridFunction(space, fun=fun)
 Before we describe in detail what is happening, we want to visualise the grid function.
 This can be done with the following command.
 
-``python
+```python
 grid_fun.plot()
 ```
 
