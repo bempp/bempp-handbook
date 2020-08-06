@@ -9,7 +9,7 @@ The following vector-valued spaces are supported in Bempp:
 Space Type | Order | Description
 ---------- | ----- | -----------
 `"RWG"`    | 0     | Rao--Wilson--Glisson Hdiv functions
-`"SNC"`    | 0     | Scaled Nédélec Hcurl functions
+`"SNC"`    | 0     | Scaled N&eacute;d&eacute;lec Hcurl functions
 `"BC"`     | 0     | Buffa--Christiansen Hdiv functions
 `"RBC"`    | 0     | Rotated Buffa--Christiansen Hcurl functions
 ---------- | ----- | -----------
@@ -34,6 +34,8 @@ rwg_space = bempp.api.function_space(grid, "RWG", 0)
 snc_space = bempp.api.function_space(grid, "SNC", 0)
 ```
 
+The DOFs of RWG and SNC spaces are at the midpoints of the edges of each cell.
+
 ## Barycentric dual spaces
 Like the scalar DUAL spaces, BC and RBC spaces are defined on the barycentrically refined grid.
 This grid is formed by joining
@@ -53,3 +55,7 @@ These spaces can be created in Bempp with:
 bc_space = bempp.api.function_space(grid, "BC", 0)
 rbc_space = bempp.api.function_space(grid, "RBC", 0)
 ```
+
+The DOFs of BC and RBC spaces are at the midpoints of the edges of each cell (or equivalently at
+a point on the edges of the barycentric dual cells).
+

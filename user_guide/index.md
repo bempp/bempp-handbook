@@ -1,5 +1,5 @@
 ---
-title: Using Bempp
+title: A Guide to Using Bempp
 layout: handbook
 children:
   - user_guide/grids.md

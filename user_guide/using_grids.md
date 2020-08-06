@@ -79,7 +79,7 @@ bempp.api.export('grid.msh', grid=grid)
 This commands export the object `grid` as Gmsh file with the
 name `grid.msh`.
 
-In order to plot a grid we can simply use the command:
+In order to plot a grid, we can simply use the command:
 
 ```python
 grid.plot()

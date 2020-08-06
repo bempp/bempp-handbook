@@ -26,6 +26,9 @@ space = bempp.api.function_space(grid, "DP", 0)
 space = bempp.api.function_space(grid, "DP", 1)
 ```
 
+The DOFs of an order 0 DP space are at the midpoints of each cell.
+The DOFs of an order 1 DP space are at the three vertices of each cell.
+
 ## Continuous polynomial spaces
 P spaces are polynomial inside each element and continuous between elements.
 An example basis function of an order 1 P space is shown below.
@@ -38,6 +41,7 @@ This space can be created in Bempp with:
 space = bempp.api.function_space(grid, "P", 1)
 ```
 
+The DOFs of an order 1 P space are at the three vertices of each cell.
 
 ## Barycentric dual spaces
 To define the barycentric dual space, we first create the barycentrically refined mesh by joining
@@ -62,3 +66,8 @@ These spaces can be created in Bempp with:
 space = bempp.api.function_space(grid, "DUAL", 0)
 space = bempp.api.function_space(grid, "DUAL", 1)
 ```
+
+The DOFs of an order 0 DUAL space are at the three vertices of each cell
+(ie the midpoints of each barycentric dual cell).
+The DOFs of an order 1 DUAL space are at the mispoints of each cell
+(ie the vertices of each barycentric dual cell).
