@@ -17,6 +17,7 @@ A `SparseDiscreteBoundaryOperator` can be obtained using:
 ```python
 mat = ident.weak_form()
 ```
+This matrix is commonly called the mass matrix between the domain and dual spaces.
 
 If desiried, a SciPy CSR matrix can be obtained from this discrete boundary operator with:
 ```python
