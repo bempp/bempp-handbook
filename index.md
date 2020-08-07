@@ -2,10 +2,10 @@
 title: The Bempp Handbook
 layout: handbook
 children:
-#  - introduction.md
+  - introduction.md
   - user_guide/index.md
-#  - core/index.md
-#  - theory/index.md
+  - core/index.md
+  - theory/index.md
 ---
 
 Welcome to the Bempp Handbook, the main documentation for bempp-cl.

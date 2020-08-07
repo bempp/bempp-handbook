@@ -6,6 +6,8 @@ children:
   - theory/discrete_function_spaces.md
 ---
 
+This section is still being written.
+
 The Bempp data structures closely follow the underlying Mathematics.
 The basis for each problem is a grid object, which defines the triangulation
 of the underlying geometry. Using the grid object one defines a function
