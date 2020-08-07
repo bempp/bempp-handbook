@@ -22,11 +22,11 @@ use appropriate singular quadrature rules to handle this.
 
 These operators can be initialised in Bempp using:
 ```python
-from bempp.api.operators.boundary import helmholtz
-single = helmholtz.single_layer(domain, range_, dual, omega)
-double = helmholtz.double_layer(domain, range_, dual, omega)
-adjoint_d = helmholtz.adjoint_double_layer(domain, range_, dual, omega)
-hypersingular = hypersingular(domain, range_, dual, omega)
+from bempp.api.operators.boundary import modified_helmholtz
+single = modified_helmholtz.single_layer(domain, range_, dual, omega)
+double = modified_helmholtz.double_layer(domain, range_, dual, omega)
+adjoint_d = modified_helmholtz.adjoint_double_layer(domain, range_, dual, omega)
+hypersingular = modified_helmholtz.hypersingular(domain, range_, dual, omega)
 ```
 The spaces passed into each operator should be appropriately chosen
 [scalar function spaces](scalar_function_spaces.md).
@@ -35,8 +35,21 @@ A keyword argument `assembler` may be passed into each constructor to change the
 used to assemble the operator. For example, the single layer operator will be discretised using
 the fast multipole method (FMM) if it is initialised with:
 ```python
-single = helmholtz.single_layer(
+single = modified_helmholtz.single_layer(
     domain, range_, dual, omega, assembler="fmm")
+```
+
+When using dense assembly, the keyword argument `device_interface` can be used to switch
+between assembly using OpenCL and Numba:
+```python
+single = modified_helmholtz.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="numba"
+    )
+single = modified_helmholtz.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="opencl"
+    )
 ```
 
 The matrix discretisation of an operator can be obtained using, for example:

@@ -25,7 +25,7 @@ from bempp.api.operators.boundary import laplace
 single = laplace.single_layer(domain, range_, dual)
 double = laplace.double_layer(domain, range_, dual)
 adjoint_d = laplace.adjoint_double_layer(domain, range_, dual)
-hypersingular = hypersingular(domain, range_, dual)
+hypersingular = laplace.hypersingular(domain, range_, dual)
 ```
 The spaces passed into each operator should be appropriately chosen
 [scalar function spaces](scalar_function_spaces.md).
@@ -35,6 +35,19 @@ used to assemble the operator. For example, the single layer operator will be di
 the fast multipole method (FMM) if it is initialised with:
 ```python
 single = laplace.single_layer(domain, range_, dual, assembler="fmm")
+```
+
+When using dense assembly, the keyword argument `device_interface` can be used to switch
+between assembly using OpenCL and Numba:
+```python
+single = laplace.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="numba"
+    )
+single = laplace.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="opencl"
+    )
 ```
 
 The matrix discretisation of an operator can be obtained using, for example:

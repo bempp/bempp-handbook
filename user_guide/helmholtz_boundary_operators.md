@@ -26,7 +26,7 @@ from bempp.api.operators.boundary import helmholtz
 single = helmholtz.single_layer(domain, range_, dual, wavenumber)
 double = helmholtz.double_layer(domain, range_, dual, wavenumber)
 adjoint_d = helmholtz.adjoint_double_layer(domain, range_, dual, wavenumber)
-hypersingular = hypersingular(domain, range_, dual, wavenumber)
+hypersingular = helmholtz.hypersingular(domain, range_, dual, wavenumber)
 ```
 The spaces passed into each operator should be appropriately chosen
 [scalar function spaces](scalar_function_spaces.md).
@@ -37,6 +37,19 @@ the fast multipole method (FMM) if it is initialised with:
 ```python
 single = helmholtz.single_layer(
     domain, range_, dual, wavenumber, assembler="fmm")
+```
+
+When using dense assembly, the keyword argument `device_interface` can be used to switch
+between assembly using OpenCL and Numba:
+```python
+single = helmholtz.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="numba"
+    )
+single = helmholtz.single_layer(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="opencl"
+    )
 ```
 
 The matrix discretisation of an operator can be obtained using, for example:

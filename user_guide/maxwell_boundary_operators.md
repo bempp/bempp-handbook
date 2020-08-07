@@ -37,6 +37,19 @@ electric = maxwell.electric_field(
     domain, range_, dual, wavenumber, assembler="fmm")
 ```
 
+When using dense assembly, the keyword argument `device_interface` can be used to switch
+between assembly using OpenCL and Numba:
+```python
+electric = maxwell.electric_field(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="numba"
+    )
+electric = maxwell.electric_field(
+    domain, range_, dual, wavenumber, assembler="dense",
+    device_interface="opencl"
+    )
+```
+
 The matrix discretisation of an operator can be obtained using, for example:
 
 ```python
