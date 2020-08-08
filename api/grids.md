@@ -2,8 +2,8 @@
 title: Grids
 layout: handbook
 children:
-  - user_guide/creating_grids.md
-  - user_guide/using_grids.md
+  - api/creating_grids.md
+  - api/using_grids.md
 ---
 
 In order to solve a problem using the boundary element method, we must first define the grid

@@ -2,10 +2,10 @@
 title: Potential Operators
 layout: handbook
 children:
-  - user_guide/laplace_potential_operators.md
-  - user_guide/helmholtz_potential_operators.md
-  - user_guide/modified_helmholtz_potential_operators.md
-  - user_guide/maxwell_potential_operators.md
+  - api/laplace_potential_operators.md
+  - api/helmholtz_potential_operators.md
+  - api/modified_helmholtz_potential_operators.md
+  - api/maxwell_potential_operators.md
 ---
 
 Once the solution of a boundary integral formulation has been approximated, potential

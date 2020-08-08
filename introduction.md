@@ -20,7 +20,7 @@ The core assembly routines of the library are contained in `bempp.core`. The maj
 to directly interact with the functionality in `bempp.core`.
 
 In this handbook, we introduce and demonstrate the functionality of Bempp. The handbook is split into three parts.
-First, we present [a guide to using Bempp](user_guide/index.md). This part of the handbook takes the reader
+First, we present [a guide to using Bempp](api/index.md). This part of the handbook takes the reader
 through all the major functionality contained in the `bempp.api` user interface.
 
 In the second part of the handbook, we take [a journey into the Bempp core](core/index.md) where we look in more detail

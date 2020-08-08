@@ -2,12 +2,12 @@
 title: Boundary Operators
 layout: handbook
 children:
-  - user_guide/sparse_boundary_operators.md
-  - user_guide/laplace_boundary_operators.md
-  - user_guide/helmholtz_boundary_operators.md
-  - user_guide/modified_helmholtz_boundary_operators.md
-  - user_guide/maxwell_boundary_operators.md
-  - user_guide/operator_algebra.md
+  - api/sparse_boundary_operators.md
+  - api/laplace_boundary_operators.md
+  - api/helmholtz_boundary_operators.md
+  - api/modified_helmholtz_boundary_operators.md
+  - api/maxwell_boundary_operators.md
+  - api/operator_algebra.md
 ---
 
 Boundary integral formulations of problems are commonly written using boundary integral operators.

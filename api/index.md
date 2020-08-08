@@ -2,12 +2,12 @@
 title: A Guide to Using Bempp
 layout: handbook
 children:
-  - user_guide/grids.md
-  - user_guide/function_spaces.md
-  - user_guide/grid_functions.md
-  - user_guide/boundary_operators.md
-  - user_guide/solvers.md
-  - user_guide/potential_operators.md
+  - api/grids.md
+  - api/function_spaces.md
+  - api/grid_functions.md
+  - api/boundary_operators.md
+  - api/solvers.md
+  - api/potential_operators.md
 ---
 
 This section of the Bempp Handbook gives details of the functionality of Bempp.

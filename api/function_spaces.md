@@ -2,10 +2,10 @@
 title: Function Spaces
 layout: handbook
 children:
-  - user_guide/creating_function_spaces.md
-  - user_guide/scalar_function_spaces.md
-  - user_guide/vector_function_spaces.md
-  - user_guide/segment_spaces.md
+  - api/creating_function_spaces.md
+  - api/scalar_function_spaces.md
+  - api/vector_function_spaces.md
+  - api/segment_spaces.md
 ---
 
 Once we have created a grid, we can define finite-dimensional function spaces
