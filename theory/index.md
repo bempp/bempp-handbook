@@ -3,7 +3,11 @@ title: A Bempp User's Introduction to Boundary Element Methods
 layout: handbook
 children:
   - theory/function_spaces.md
-  - theory/discrete_function_spaces.md
+  - theory/operators.md
+  - theory/solvers.md
+  - theory/deriving_formulations.md
+  - theory/matrix_compression.md
+  - theory/further_reading.md
 ---
 
 This section is still being written.

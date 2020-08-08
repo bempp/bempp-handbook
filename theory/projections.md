@@ -1,5 +1,5 @@
 ---
-title: Function Projections
+title: Interpolation and Projection
 layout: handbook
 ---
 

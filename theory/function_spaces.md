@@ -1,6 +1,9 @@
 ---
 title: Function Spaces
 layout: handbook
+children:
+  - theory/sobolev_spaces.md
+  - theory/discrete_function_spaces.md
 ---
 
 ### Local vs global dofs
