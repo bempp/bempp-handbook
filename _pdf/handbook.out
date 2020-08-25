@@ -1,0 +1,71 @@
+\BOOKMARK [-1][-]{part.1}{I Introduction}{}% 1
+\BOOKMARK [-1][-]{part.2}{II A Guide to Using Bempp}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Grids}{part.2}% 3
+\BOOKMARK [1][-]{section.1.1}{Creating a Grid}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.1}{ Built-in grids}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.2}{ Importing a grid}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.3}{ Creating a grid from element data}{section.1.1}% 7
+\BOOKMARK [1][-]{section.1.2}{Working with Grids}{chapter.1}% 8
+\BOOKMARK [2][-]{subsection.1.2.1}{ Querying grid information}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.2}{ Plotting and exporting grids}{section.1.2}% 10
+\BOOKMARK [0][-]{chapter.2}{Function Spaces}{part.2}% 11
+\BOOKMARK [1][-]{section.2.1}{Defining a Function Space}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Scalar Function Spaces}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{ Discontinuous polynomial spaces}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{ Continuous polynomial spaces}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{ Barycentric dual spaces}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Vector Function Spaces}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{ RWG and SNC spaces}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{ Barycentric dual spaces}{section.2.3}% 19
+\BOOKMARK [1][-]{section.2.4}{Function Spaces on Segments}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{ Controlling segment spaces}{section.2.4}% 21
+\BOOKMARK [0][-]{chapter.3}{Grid functions}{part.2}% 22
+\BOOKMARK [1][-]{section.3.1}{ Initialising with a Python callable}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{ Disabling just-in-time compilation}{section.3.1}% 24
+\BOOKMARK [1][-]{section.3.2}{ Initialising with coefficients or projections}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{ Coefficients and projections}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{ Plotting and exporting grid functions}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Boundary Operators}{part.2}% 28
+\BOOKMARK [1][-]{section.4.1}{ Domains, ranges, and duals}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Sparse Boundary Operators}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Boundary Operators for Laplace's Equation}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Boundary Operators for the Helmholtz Equation}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.5}{Boundary Operators for the Modified Helmholtz Equation}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.6}{Boundary Operators for Maxwell's Equations}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.7}{Operator Algebra}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Linear Solvers}{part.2}% 36
+\BOOKMARK [1][-]{section.5.1}{Direct Solvers}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Iterative Solvers}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Potential Operators}{part.2}% 39
+\BOOKMARK [1][-]{section.6.1}{Potential Operators for Laplace's Equation}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.2}{Potential Operators for the Helmholtz Equation}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.3}{Potential Operators for the modified Helmholtz Equation}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.4}{Potential Operators for Maxwell's Equations}{chapter.6}% 43
+\BOOKMARK [-1][-]{part.3}{III A Journey into the Bempp Core}{}% 44
+\BOOKMARK [0][-]{chapter.7}{Assembling Operators}{part.3}% 45
+\BOOKMARK [1][-]{section.7.1}{Assembling Operators using OpenCL}{chapter.7}% 46
+\BOOKMARK [1][-]{section.7.2}{Assembling Operators using Numba}{chapter.7}% 47
+\BOOKMARK [1][-]{section.7.3}{Assembling Operators using FMM}{chapter.7}% 48
+\BOOKMARK [-1][-]{part.4}{IV A Bempp User's Introduction to Boundary Element Methods}{}% 49
+\BOOKMARK [0][-]{chapter.8}{Function Spaces}{part.4}% 50
+\BOOKMARK [1][-]{subsection.8.0.1}{ Local vs global dofs}{chapter.8}% 51
+\BOOKMARK [1][-]{section.8.1}{Sobolev Spaces}{chapter.8}% 52
+\BOOKMARK [1][-]{section.8.2}{Discrete Function Spaces}{chapter.8}% 53
+\BOOKMARK [2][-]{subsection.8.2.1}{Degrees of Freedom \(DOFs\)}{section.8.2}% 54
+\BOOKMARK [2][-]{subsection.8.2.2}{Inf-sup Stability}{section.8.2}% 55
+\BOOKMARK [2][-]{subsection.8.2.3}{Interpolation and Projection}{section.8.2}% 56
+\BOOKMARK [0][-]{chapter.9}{Operators}{part.4}% 57
+\BOOKMARK [1][-]{section.9.1}{Potential Operators}{chapter.9}% 58
+\BOOKMARK [1][-]{section.9.2}{Boundary Operators}{chapter.9}% 59
+\BOOKMARK [1][-]{section.9.3}{The Calder\363n Projector}{chapter.9}% 60
+\BOOKMARK [0][-]{chapter.10}{Linear Solvers}{part.4}% 61
+\BOOKMARK [1][-]{section.10.1}{Direct Solvers}{chapter.10}% 62
+\BOOKMARK [1][-]{section.10.2}{Iterative Solvers}{chapter.10}% 63
+\BOOKMARK [2][-]{subsection.10.2.1}{Condition Numbers and Preconditioning}{section.10.2}% 64
+\BOOKMARK [0][-]{chapter.11}{Deriving BEM Formulations}{part.4}% 65
+\BOOKMARK [1][-]{section.11.1}{Deriving BEM Formulations for Laplace and Helmholtz Problems}{chapter.11}% 66
+\BOOKMARK [1][-]{section.11.2}{Deriving BEM Formulations for Maxwell Problems}{chapter.11}% 67
+\BOOKMARK [0][-]{chapter.12}{Avoiding Dense Matrices}{part.4}% 68
+\BOOKMARK [1][-]{section.12.1}{The Fast Multipole Method}{chapter.12}% 69
+\BOOKMARK [1][-]{section.12.2}{Hierarchical Matrices}{chapter.12}% 70
+\BOOKMARK [0][-]{chapter.13}{References and Further Reading}{part.4}% 71
