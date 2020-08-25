@@ -4,8 +4,8 @@ layout: handbook
 children:
   - introduction.md
   - api/index.md
-#  - core/index.md
-#  - theory/index.md
+  - core/index.md
+  - theory/index.md
 ---
 
 Welcome to the Bempp Handbook, the main documentation for bempp-cl.

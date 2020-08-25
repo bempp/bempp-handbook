@@ -89,8 +89,8 @@ By default, this will plot using Gmsh (or plotly if you are inside a Jupyter not
 The following command can be used to change the plotting backend.
 
 ```python
-bempp.api.PLOT_BACKEND = 'gmsh'
-bempp.api.PLOT_BACKEND = 'paraview'
+bempp.api.PLOT_BACKEND = "gmsh"
+bempp.api.PLOT_BACKEND = "paraview"
 ```
 
 This requires Gmsh or Paraview to be available in the system path.
