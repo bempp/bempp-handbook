@@ -26,6 +26,8 @@ As an example, for a P1 (continuous piecewise linear space) the following are us
 - $\mathcal{V}=\operatorname{span}\\{1, x, y\\}$.
 - $\mathcal{L}$ is the set of point evaluations at the vertices of $R$.
 
+In this case, it is common to say that the space has a DOF at each vertex of the mesh.
+
 ### Spaces used by Bempp
 The definitions of the spaces available in Bempp are summarised in the following table.
 In each case, $R$ is the unit triangle.
