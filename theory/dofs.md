@@ -3,36 +3,42 @@ title: Degrees of Freedom (DOFs)
 layout: handbook
 ---
 
-### Local vs global dofs
+An abstract finite element is defined by:
 
-A function space associates with each element i in the grid a local basis
-of functions $S_i^{loc} := \{\Phi_{i, 1}^{loc}, \dots, \Phi_{i, n_i}^{loc}\}$,
-where the support of each local basis function $\Phi_{i, j}^{loc}$ is
-restricted to element i.
+- A reference element $R\subset\mathbb{R}^d$. In Bempp, $R$ is always a triangle with vertices at
+  $(0,0)$, $(1,0)$ and $(0,1)$.
+- A finite dimensional polynomial space $\mathcal{V}$. Inside each triangle in the mesh, the solution
+  will be approximated by a function in this space.
+- A set of functionals $\mathcal{L}={f_1, ... f_n}$ that form a basis of the dual space
+  $\mathcal{V}^*=\{f:\mathcal{V}\to\mathbb{R}\}$.
 
-A global basis function is a weighted sum of all local
-basis functions of the form
+Given a functional $f_i\in\mathcal{L}$, a corresponding polynomial basis function
+$\phi_i\in\mathcal{V}$ is defined as the function such that
+[[f_j(\phi_i)=\begin{cases}
+1&i=j\\\
+0&i\not=j
+\end{cases}.]]
 
-$$\Phi_{\ell} = \sum_{i}\sum_{j}\delta_{i, j}^{\ell}c_{i, j}\Phi_{i, j}^{loc}$$
+### Example: P1 space
+As an example, for a P1 (continuous piecewise linear space) the following are used:
 
-The coefficients $c_{i, j}$ are the local multipliers and are
-independent of the global basis functions. The
-values $\delta_{i, j}^{\ell}$ take the value 1 if the local
-basis function contributes to the global basis function or zero
-otherwise.
+- $R$ is the reference triangle.
+- $\mathcal{V}=\operatorname{span}\\{1, x, y\\}$.
+- $\mathcal{L}$ is the set of point evaluations at the vertices of $R$.
 
-Let's make an example. The usual finite element hat functions
-are defined as continuous, elementwise linear functions such that
+### Spaces used by Bempp
+The definitions of the spaces available in Bempp are summarised in the following table.
+In each case, $R$ is the unit triangle.
 
-$$\Phi_{\ell}(p_k) = \begin{cases}0, & k = \ell\\
-                                    1, &\text{otherwise}
-                               \end{cases}.$$
+----- | ------------- | -------------
+Space | $\mathcal{V}$ | $\mathcal{L}$
+----- | ------------- | -------------
+DP0   | $\\{1\\}$ | Point evaluation at centre of $R$
+P1    | $\\{1, x, y\\}$ | point evaluations at vertices of $R$
+RWG1  | $\left\\{\left(\begin{array}{c}1\\\0\end{array}\right),\left(\begin{array}{c}0\\\1\end{array}\right),\left(\begin{array}{c}x\\\\ -y\end{array}\right)\right\\}$ | Point evaluations at the midpoints of edges of $R$ in a direction normal to the edge
+SNC1  | $\left\\{\left(\begin{array}{c}1\\\0\end{array}\right),\left(\begin{array}{c}0\\\1\end{array}\right),\left(\begin{array}{c}x\\\\ -y\end{array}\right)\right\\}$ | Point evaluations at the midpoints of edges of $R$ in a direction tangential to the edge
+----- | ------------- | -------------
 
-Here, $p_k$ is the kth vertex in the grid. The local basis
-functions $\Phi_{i, j}^{loc}$, $j=1, \dots, 3$ on element i
-are defined as linear functions which are 1 on the jth vertex of the
-element and 0 on the other two vertices.
-
-The local multipliers $c_{i, j}$ are all 1, and the indices
-$\delta_{i, j}^{\ell}$ are 1 for all local basis functions whose
-nonzero vertex is identical to the global vertex $p_{\ell}$.
+The spaces defined on the barycentric dual grid are defined as subspaces of the spaces
+in the table above. Their definitions can be found in
+[<em>A dual finite element complex on the barycentric refinement</em> (2007) by A. Buffa and S. Christiansen](https://www.jstor.org/stable/40234460?seq=1).
