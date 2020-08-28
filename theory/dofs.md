@@ -15,7 +15,7 @@ An abstract finite element is defined by:
 Given a functional $f_i\in\mathcal{L}$, a corresponding polynomial basis function
 $\phi_i\in\mathcal{V}$ is defined as the function such that
 [[f_j(\phi_i)=\begin{cases}
-1&i=j\\\
+1&i=j\\\\
 0&i\not=j
 \end{cases}.]]
 
