@@ -2,9 +2,9 @@
 title: Sparse Boundary Operators
 layout: handbook
 ---
-Discretising the identity operator leads to a matrix $M=(m_{ij})$, defined by
-{% raw %}[[m_{ij}=\int_\Gamma\phi_j\cdot\overline{\psi_i},]]{% endraw %}
-where $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces respectively.
+Discretising the identity operator leads to a matrix $M=(m\_{ij})$, defined by
+[[m\_{ij}=\int\_\Gamma\phi\_j\cdot\overline{\psi\_i},]]
+where $\phi\_j$ and $\psi\_i$ are the basis functions of the domain and dual spaces respectively.
 As this integral will only be non-zero when the basis functions overlap, the resulting
 matrix will be sparse.
 

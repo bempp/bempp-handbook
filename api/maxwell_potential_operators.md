@@ -8,11 +8,11 @@ below.
 -------------- | ----------
 Operator       | Definition
 -------------- | ----------
-Electric field | {% raw %}[[(\mathcal{E}(\mathbf{p}))(\mathbf{x})=\mathrm{i} k\int_\Gamma\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}-\frac1{\mathrm{i} k}\nabla_{\mathbf{x}}\int_\Gamma\nabla_{\Gamma}\cdot\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
-Magnetic field | {% raw %}[[(\mathcal{H}(\mathbf{p})(\mathbf{x})=\nabla_\mathbf{x}\times\int_\Gamma\mathbf{p}(\mathbf{y})G(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
+Electric field | [[(\mathcal{E}(\mathbf{p}))(\mathbf{x})=\mathrm{i} k\int\_\Gamma\mathbf{p}(\mathbf{y})G\_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}-\frac1{\mathrm{i} k}\nabla\_{\mathbf{x}}\int\_\Gamma\nabla\_{\Gamma}\cdot\mathbf{p}(\mathbf{y})G\_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]
+Magnetic field | [[(\mathcal{H}(\mathbf{p})(\mathbf{x})=\nabla\_\mathbf{x}\times\int\_\Gamma\mathbf{p}(\mathbf{y})G(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]
 -------------- | ----------
 
-In each case, $G_k(\mathbf{x},\mathbf{y})$ is the Green's function for the Helmholtz equation
+In each case, $G\_k(\mathbf{x},\mathbf{y})$ is the Green's function for the Helmholtz equation
 with wavenumber $k$.
 
 To assemble potential operators in Bempp, the desired evaluation points must first be defined.

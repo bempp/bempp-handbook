@@ -8,12 +8,12 @@ below.
 -------------------- | ----------
 Operator             | Definition
 -------------------- | ----------
-Single layer         | {% raw %}[[(\mathcal{V}\mu)(\mathbf{x}) := \int_{\Gamma} G_\omega(\mathbf{x},\mathbf{y}) \mu(\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
-Double layer         | {% raw %}[[(\mathcal{K}v)(\mathbf{x}) := \int_{\Gamma} \frac{\partial G_\omega(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}} v(\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
+Single layer         | [[(\mathcal{V}\mu)(\mathbf{x}) := \int\_{\Gamma} G\_\omega(\mathbf{x},\mathbf{y}) \mu(\mathbf{y})\,\mathrm{d}\mathbf{y}]]
+Double layer         | [[(\mathcal{K}v)(\mathbf{x}) := \int\_{\Gamma} \frac{\partial G\_\omega(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}\_{\mathbf{y}}} v(\mathbf{y})\,\mathrm{d}\mathbf{y}]]
 -------------------- | ----------
 
 
-In each case, $G_\omega(\mathbf{x},\mathbf{y})$ is the Green's function for the modified Helmholtz equation
+In each case, $G\_\omega(\mathbf{x},\mathbf{y})$ is the Green's function for the modified Helmholtz equation
 with frequency $\omega$.
 
 To assemble potential operators in Bempp, the desired evaluation points must first be defined.

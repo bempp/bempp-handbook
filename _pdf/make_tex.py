@@ -14,6 +14,8 @@ def preamble():
 \\author{Timo Betcke and Matthew W. Scroggs}
 \\begin{document}
 \\maketitle
+\\tableofcontents
+\\clearpage
 """
 
 
@@ -76,9 +78,7 @@ def markdown_to_tex(md, level):
     md = md.replace("\\\\{", "\\{")
     md = md.replace("\\\\}", "\\}")
     md = md.replace("\\\\\\\\", "\\\\")
-    md = md.replace("{% raw %}", "")
-    md = md.replace("{% raw %}", "")
-    md = md.replace("{% endraw %}", "")
+    md = md.replace("\\_", "_")
     md = re.sub(r"!\[([^\]]+)\]\(([^\)]+)\)(?:\{[^\}]+\})?",
                 r"\\begin{center}\n\\includegraphics[width=0.6\\textwidth]{\2}\n\n\\footnotesize{\1}\\end{center}", md)
     md = re.sub(r"\[([^\]]+)\]\(([^\)]+)\)", r"\\href{\2}{\1}", md)
