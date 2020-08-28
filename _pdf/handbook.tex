@@ -140,10 +140,10 @@ $\{(1, 0, 0), (1, 1, 0), (0, 1, 0)\}$ we use the following commands:
 
 \begin{python}
 vertices = np.array(
-    \[0, 1, 0, 1], [0, 0, 1, 1], [0, 0, 0, 0\],
+    [[0, 1, 0, 1], [0, 0, 1, 1], [0, 0, 0, 0]],
     dtype=np.float64)
 elements = np.array(
-    \[0, 1], [1, 3], [2, 2\], dtype=np.uint32)
+    [[0, 1], [1, 3], [2, 2]], dtype=np.uint32)
 grid = bempp.api.Grid(vertices, elements)
 \end{python}
 
@@ -203,7 +203,7 @@ Note that the numbering of element starts at 0, so element 5 is the grid's sixth
 The vertex coordinates of element 5 can be found using:
 
 \begin{python}
-grid.vertices[:, grid.elements[:, 5\]
+grid.vertices[:, grid.elements[:, 5]]
 \end{python}
 
 The area of the element 5 is:
@@ -221,7 +221,7 @@ grid.element_edges[5]
 The vertex indices of the edges of element 5 can be obtained using:
 
 \begin{python}
-grid.edges[:, grid.element_edges[:, 5\]
+grid.edges[:, grid.element_edges[:, 5]]
 \end{python}
 
 This returns a 2$\times$3 array of the vertex coordinates associated
@@ -1254,59 +1254,149 @@ Internally, Bempp uses the [ExaFMM]() library to carry out its FMM computations.
 The Bempp data structures closely follow the underlying mathematics.
 This allows the user to solve problems with Python code that closesly resembled thier
 BEM formulation. In many cases, knowledge of some details of the underlying mathematics
-is required to decide how best to formulate and solve the problem.
+is required to decide how best to formulate and solve a problem.
 
 In this section of the Bempp Handbook, we look at some highlights of the mathematical theory
 behind boundary element methods.
+
+This section of the Bempp Handbook is still being written and some sections are still incomplete.
 
 
 \chapter{Function Spaces}
 
 
-\subsection{ Local vs global dofs}
-A function space associates with each element i in the grid a local basis
-of functions $S_i^{loc} := \{\Phi_{i, 1}^{loc}, \dots, \Phi_{i, n_i}^{loc}\}$,
-where the support of each local basis function $\Phi_{i, j}^{loc}$ is
-restricted to element i.
+To use the boundary element method, we start with a variational boundary integral
+equation, for example: Find $u\in H^{1/2}(\Gamma)$ such that for all $v\in H^{1/2}(\Gamma)$,
+\[\left\langle\mathsf{V}u,v\right\rangle = \left\langle f,v\right\rangle.\]
 
-A global basis function is a weighted sum of all local
-basis functions of the form
+An approximation of the solution of this problem is then found by discretising the problem
+and searching for a solution in a subspace $\mathcal{V}_h\subset H^{1/2}(\Gamma)$.
 
-$$\Phi_{\ell} = \sum_{i}\sum_{j}\delta_{i, j}^{\ell}c_{i, j}\Phi_{i, j}^{loc}$$
-
-The coefficients $c_{i, j}$ are the local multipliers and are
-independent of the global basis functions. The
-values $\delta_{i, j}^{\ell}$ take the value 1 if the local
-basis function contributes to the global basis function or zero
-otherwise.
-
-Let's make an example. The usual finite element hat functions
-are defined as continuous, elementwise linear functions such that
-
-$$\Phi_{\ell}(p_k) = \begin{cases}0, & k = \ell\\
-                                    1, &\text{otherwise}
-                               \end{cases}.$$
-
-Here, $p_k$ is the kth vertex in the grid. The local basis
-functions $\Phi_{i, j}^{loc}$, $j=1, \dots, 3$ on element i
-are defined as linear functions which are 1 on the jth vertex of the
-element and 0 on the other two vertices.
-
-The local multipliers $c_{i, j}$ are all 1, and the indices
-$\delta_{i, j}^{\ell}$ are 1 for all local basis functions whose
-nonzero vertex is identical to the global vertex $p_{\ell}$.
+In this section of the Bempp Handbook, we look at the definitions of
+\href{soboov_space.md}{continuous function spaces such as $H^{1/2}(\Gamma)$}
+that are used in the boundary integral equations, and we look at how
+\href{discrete_function_spaces.md}{discrete subspaces} of these are usually defined.
 
 
 \section{Sobolev Spaces}
 
 
+This section of the Bempp Handbook introduces the Sobolev function spaces in which the solutions
+to the variational boundary integral equation are sought.
+
+Let $\Omega^-\subset\mathbb{R}^3$ be a bounded domain and let $\Gamma$
+be the boundary of $\Omega^-$. Let $\Omega^+=\mathbb{R}^3\setminus\Omega^-$ be the region exterior
+to $\Omega^-$.
+
+\subsection{ Scalar function spaces}For Laplace and Helmholtz problems, we use spaces containing scalar functions
+$f:\Omega^-\to\mathbb{C}$.
+We begin by defining the space of square integrable functions:
+\[H^0(\Omega^-):=L^2(\Omega^-):=\left\{v:\Omega^-\to\mathbb{C}\middle|\int_{\Omega^-} |v|^2<\infty\right\}\]
+
+We then define the Sobolev space $H^1(\Omega^-)$ to be the space of square integrable functions
+whose first derivatives are also square integrable.
+\[H^1(\Omega^-):=\left\{v\in L^2(\Omega^-)\middle|\frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}, \frac{\partial v}{\partial z}\in L^2(\Omega)\right\}\]
+
+In general, for each positive integer $k$, we define the space $H^k(\Omega^-)$ to be the space
+of square integrable functions whose derivatives of order up to and including $k$ are also
+square integrable.
+
+\subsubsection{ Traces}Next, we define the Dirichlet and Neumann traces of a function on the boundary by
+\[(\gamma^-_\text{D}v)(\mathbf{x}):=\lim_{\Omega^-\ni \mathbf{x}'\to \mathbf{x}\in\Gamma}v(\mathbf{x}'),\]
+\[(\gamma^-_\text{N}v)(\mathbf{x}):=\gamma_\text{D}\nabla v(\mathbf{x'})\cdot\mathbf{n}_\mathbf{x}.\]
+
+We define the space $H^{1/2}(\Gamma)$ to be the Dirichlet trace of the space $H^1(\Omega^-)$:
+\[H^{1/2}(\Gamma):=\gamma_\text{D}H^1(\Omega^-)=\left\{\gamma_\text{D}v\middle|v\in H^1(\Omega^-)\right\}\]
+
+In general, for each positive integer $k$, we define the space $H^{k-1/2}(\Gamma)$ to be the Dirchlet
+trace of the space $H^k(\Omega^-)$.
+
+The space $H^{-1/2}(\Gamma)$ is defined as the dual space of $H^{1/2}(\Gamma)$:
+\[H^{-1/2}(\Gamma) = \left\{f:H^{1/2}(\Gamma)\to\mathbb{C}\right\}.\]
+
+\subsection{ Vector function spaces}For Maxwell problems, we use spaces containing vector functions
+$\mathbf{f}:\Omega^-\to\mathbb{C}^3$.
+We begin by defining the space of square integrable functions:
+\[\mathbf{H}^0(\Omega^-):=\mathbf{L}^2(\Omega^-):=\left\{\mathbf{v}:\Omega^-\to\mathbb{C}^3\middle|\int_{\Omega^-} |\mathbf{v}|^2<\infty\right\}\]
+
+We then define the Sobolev space $\mathbf{H}^1(\Omega^-)$ to be the space of square integrable functions
+whose first derivatives are also square integrable.
+\[\mathbf{H}^1(\Omega^-):=\left\{\mathbf{v}\in \mathbf{L}^2(\Omega^-)\middle|\frac{\partial \mathbf{v}}{\partial x}, \frac{\partial \mathbf{v}}{\partial y}, \frac{\partial \mathbf{v}}{\partial z}\in \mathbf{L}^2(\Omega)\right\}\]
+
+In general, for each positive integer $k$, we define the space $\mathbf{H}^k(\Omega^-)$ to be the space
+of square integrable functions whose derivatives of order up to and including $k$ are also
+square integrable.
+
+\subsubsection{ Traces}On $\Gamma$, we define the space of square integrable tangential vector fields:
+\[\mathbf{L}^2_\mathbf{t}(\Gamma):=\left\{\mathbf{v}\in\mathbf{L}^2(\Gamma)\middle|\mathbf{v}\cdot\mathbf{n}=0\right\}\]
+
+Next, we define the tangential and Neumann traces of a function on the boundary by
+\[(\mathbf{\gamma}^-_\textbf{t}\mathbf{v})(\mathbf{x}):=\lim_{\Omega^-\ni \mathbf{x}'\to \mathbf{x}\in\Gamma}\mathbf{v}(\mathbf{x}')\times\mathbf{n}_\mathbf{x},\]
+\[(\mathbf{\gamma}^-_\textbf{N,k}\mathbf{v})(\mathbf{x}):=\frac1{\mathrm{i}k}\mathbf{\gamma}_\textbf{t}\nabla\times\mathbf{v}(\mathbf{x'}).\]
+
+We define the space $\mathbf{H}^{1/2}_\times(\Gamma)$ to be the tangential trace of the space $\mathbf{H}^1(\Omega^-)$:
+\[\mathbf{H}^{1/2}_\times(\Gamma):=\mathbf\gamma_\textbf{t}\mathbf{H}^1(\Omega^-)=\left\{\mathbf\gamma_\textbf{t}\mathbf{v}\middle|\mathbf{v}\in \mathbf{H}^1(\Omega^-)\right\}\]
+
+We define the spaces of div- and curl-conforming functions by:
+\[\mathbf{H}^{-1/2}_\times(\operatorname{div}_\Gamma,\Gamma):=\left\{\mathbf{v}\in\mathbf{H}^{1/2}_\times(\Gamma)\middle|\operatorname{div}_\Gamma\mathbf{v}\in H^{1/2}\times(\Gamma)\right\}\]
+\[\mathbf{H}^{-1/2}_\times(\operatorname{curl}_\Gamma,\Gamma):=\left\{\mathbf{v}\in\mathbf{H}^{1/2}_\times(\Gamma)\middle|\operatorname{curl}_\Gamma\mathbf{v}\in H^{1/2}\times(\Gamma)\right\}\]
+In these definitions, $\operatorname{div}_\Gamma$
+and $\operatorname{curl}_\Gamma$ are the scalar
+surface div and curl operators. Using the definition of these, it can be seen that
+\[\mathbf{H}^{-1/2}_\times(\operatorname{curl}_\Gamma,\Gamma)=\left\{\mathbf{n}\times\mathbf{v}\middle|\mathbf{v}\in\mathbf{H}^{-1/2}_\times(\operatorname{div}_\Gamma,\Gamma)\right\}.\]
+
 
 \section{Discrete Function Spaces}
 
 
+When approximating the solution of a problem with the boundary element method, finite-dimensional
+subspaces of the relevant \href{sobolev_spaces.md}{Sobolev spaces} are used to discretise the problem.
+
+In this section of the Bempp Handbook, we look at how these discrete spaces are defined.
+
 
 \subsection{Degrees of Freedom (DOFs)}
 
+
+An abstract finite element is defined by:
+
+- A reference element $R\subset\mathbb{R}^d$. In Bempp, $R$ is always a triangle with vertices at
+  $(0,0)$, $(1,0)$ and $(0,1)$.
+- A finite dimensional polynomial space $\mathcal{V}$. Inside each triangle in the mesh, the solution
+  will be approximated by a function in this space.
+- A set of functionals $\mathcal{L}={f_1, ... f_n}$ that form a basis of the dual space
+  $\mathcal{V}^*=\{f:\mathcal{V}\to\mathbb{R}\}$.
+
+Given a functional $f_i\in\mathcal{L}$, a corresponding polynomial basis function
+$\phi_i\in\mathcal{V}$ is defined as the function such that
+\[f_j(\phi_i)=\begin{cases}1&i=j\\0&i\not=j\end{cases}.\]
+
+\subsubsection{ Example: P1 space}As an example, for a P1 (continuous piecewise linear space) the following are used:
+
+- $R$ is the reference triangle.
+- $\mathcal{V}=\operatorname{span}\{1, x, y\}$.
+- $\mathcal{L}$ is the set of point evaluations at the vertices of $R$.
+
+In this case, it is common to say that the space has a DOF at each vertex of the mesh.
+
+\subsubsection{ Spaces used by Bempp}The definitions of the spaces available in Bempp are summarised in the following table.
+In each case, $R$ is the unit triangle.
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Space & $\mathcal{V}$ & $\mathcal{L}$\\
+\hline
+DP0   & $\operatorname{span}\{1\}$ & Point evaluation at centre of $R$\\
+P1    & $\operatorname{span}\{1, x, y\}$ & point evaluations at vertices of $R$\\
+RWG1  & $\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}x\\y\end{array}\right)\right\}$ & Point evaluations at the midpoints of edges of $R$ in a direction normal to the edge\\
+SNC1  & $\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}y\\-x\end{array}\right)\right\}$ & Point evaluations at the midpoints of edges of $R$ in a direction tangential to the edge\\
+\hline
+\end{tabular}
+\end{center}
+The spaces defined on the barycentric dual grid are defined as subspaces of the spaces
+in the table above. Their definitions can be found in
+\href{https://www.jstor.org/stable/40234460?seq=1}{\emph{A dual finite element complex on the barycentric refinement} (2007) by A. Buffa and S. Christiansen}.
 
 
 \subsection{Inf-sup Stability}

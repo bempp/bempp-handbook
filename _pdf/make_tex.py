@@ -67,11 +67,11 @@ def markdown_to_tex(md, level):
     md = md.replace("```", "\\end{python}")
     md = re.sub(r"`([^`]+)`", r"\\pyth{\1}", md)
     md = md.replace("&times;", "$\\times$")
+    md = md.replace("{% raw %}", "")
+    md = md.replace("{% endraw %}", "")
     md = re.sub(r"!\[([^\]]+)\]\(([^\)]+)\)(?:\{[^\}]+\})?",
                 r"\\begin{center}\n\\includegraphics[width=0.6\\textwidth]{\2}\n\n\\footnotesize{\1}\\end{center}", md)
     md = re.sub(r"\[([^\]]+)\]\(([^\)]+)\)", r"\\href{\2}{\1}", md)
-    md = md.replace("[[", "\\[")
-    md = md.replace("]]", "\\]")
     md = parse_markdown_tables(md)
     return html_to_tex(md)
 
@@ -82,7 +82,6 @@ def html_to_tex(html):
         html = html.replace(f"&{vowel}grave;", f"\\`{vowel}")
     html = html.replace("<em>", "\\emph{")
     html = html.replace("</em>", "}")
-    html = html.replace("\_", "_")
     return html
 
 

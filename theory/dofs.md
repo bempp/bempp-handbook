@@ -14,28 +14,28 @@ An abstract finite element is defined by:
 
 Given a functional $f_i\in\mathcal{L}$, a corresponding polynomial basis function
 $\phi_i\in\mathcal{V}$ is defined as the function such that
-[[f_j(\phi_i)=\begin{cases}1&i=j\\\0&i\not=j\end{cases}.]]
+{% raw %}\[f_j(\phi_i)=\begin{cases}1&i=j\\0&i\not=j\end{cases}.\]{% endraw %}
 
-### Example: P1 space
+## Example: P1 space
 As an example, for a P1 (continuous piecewise linear space) the following are used:
 
 - $R$ is the reference triangle.
-- $\mathcal{V}=\operatorname{span}\\{1, x, y\\}$.
+- $\mathcal{V}=\operatorname{span}\{1, x, y\}$.
 - $\mathcal{L}$ is the set of point evaluations at the vertices of $R$.
 
 In this case, it is common to say that the space has a DOF at each vertex of the mesh.
 
-### Spaces used by Bempp
+## Spaces used by Bempp
 The definitions of the spaces available in Bempp are summarised in the following table.
 In each case, $R$ is the unit triangle.
 
 ----- | ------------- | -------------
 Space | $\mathcal{V}$ | $\mathcal{L}$
 ----- | ------------- | -------------
-DP0   | $\\{1\\}$ | Point evaluation at centre of $R$
-P1    | $\\{1, x, y\\}$ | point evaluations at vertices of $R$
-RWG1  | $\left\\{\left(\begin{array}{c}1\\\0\end{array}\right),\left(\begin{array}{c}0\\\1\end{array}\right),\left(\begin{array}{c}x\\\\ y\end{array}\right)\right\\}$ | Point evaluations at the midpoints of edges of $R$ in a direction normal to the edge
-SNC1  | $\left\\{\left(\begin{array}{c}1\\\0\end{array}\right),\left(\begin{array}{c}0\\\1\end{array}\right),\left(\begin{array}{c}y\\\\ -x\end{array}\right)\right\\}$ | Point evaluations at the midpoints of edges of $R$ in a direction tangential to the edge
+DP0   | {% raw %}$\operatorname{span}\{1\}${% endraw %} | Point evaluation at centre of $R$
+P1    | {% raw %}$\operatorname{span}\{1, x, y\}${% endraw %} | point evaluations at vertices of $R$
+RWG1  | {% raw %}$\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}x\\y\end{array}\right)\right\}${% endraw %} | Point evaluations at the midpoints of edges of $R$ in a direction normal to the edge
+SNC1  | {% raw %}$\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}y\\-x\end{array}\right)\right\}${% endraw %} | Point evaluations at the midpoints of edges of $R$ in a direction tangential to the edge
 ----- | ------------- | -------------
 
 The spaces defined on the barycentric dual grid are defined as subspaces of the spaces

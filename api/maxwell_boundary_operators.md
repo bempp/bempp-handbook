@@ -8,8 +8,8 @@ below.
 -------------------- | ------------ | --------------
 Operator             | Symbol       | Matrix entries
 -------------------- | ------------ | --------------
-Electric field       | $\mathsf{E}$ | [[m_{ij}=-\mathrm{i}k\int\_\Gamma\int\_\Gamma G\_k(\mathbf{x},\mathbf{y})\mathbf{\phi}_j(\mathbf{y})\cdot\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}-\frac{1}{\mathrm{i}k}\int\_\Gamma\int\_\Gamma G\_k(\mathrm{x},\mathrm{y})\nabla\_\Gamma\mathbf{\phi}_j(\mathbf{y})\nabla\_\Gamma\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})]]
-Magnetic field       | $\mathsf{H}$ | [[m_{ij}=-\int_\Gamma\int_\Gamma\nabla_\mathbf{x}G_k(\mathbf{x},\mathbf{y})\cdot(\mathbf{\psi}_j(\mathbf{y})\times\mathbf{\psi}_i(\mathbf{x}))\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})]]
+Electric field       | $\mathsf{E}$ | {% raw %}\[m_{ij}=-\mathrm{i}k\int_\Gamma\int_\Gamma G_k(\mathbf{x},\mathbf{y})\mathbf{\phi}_j(\mathbf{y})\cdot\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}-\frac{1}{\mathrm{i}k}\int_\Gamma\int_\Gamma G_k(\mathrm{x},\mathrm{y})\nabla_\Gamma\mathbf{\phi}_j(\mathbf{y})\nabla_\Gamma\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})\]{% endraw %}
+Magnetic field       | $\mathsf{H}$ | {% raw %}\[m_{ij}=-\int_\Gamma\int_\Gamma\nabla_\mathbf{x}G_k(\mathbf{x},\mathbf{y})\cdot(\mathbf{\psi}_j(\mathbf{y})\times\mathbf{\psi}_i(\mathbf{x}))\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})\]{% endraw %}
 -------------------- | ------------ | --------------
 
 

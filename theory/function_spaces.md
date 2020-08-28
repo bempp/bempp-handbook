@@ -8,7 +8,7 @@ children:
 
 To use the boundary element method, we start with a variational boundary integral
 equation, for example: Find $u\in H^{1/2}(\Gamma)$ such that for all $v\in H^{1/2}(\Gamma)$,
-[[\left\langle\mathsf{V}u,v\right\rangle = \left\langle f,v\right\rangle.]]
+{% raw %}\[\left\langle\mathsf{V}u,v\right\rangle = \left\langle f,v\right\rangle.\]{% endraw %}
 
 An approximation of the solution of this problem is then found by discretising the problem
 and searching for a solution in a subspace $\mathcal{V}_h\subset H^{1/2}(\Gamma)$.

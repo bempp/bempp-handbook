@@ -8,8 +8,8 @@ below.
 -------------- | ----------
 Operator       | Definition
 -------------- | ----------
-Electric field | [[(\mathcal{E}(\mathbf{p}))(\mathbf{x})=\mathrm{i} k\int_\Gamma\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}-\frac1{\mathrm{i} k}\nabla_{\mathbf{x}}\int_\Gamma\nabla_{\Gamma}\cdot\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]
-Magnetic field | [[(\mathcal{H}(\mathbf{p})(\mathbf{x})=\nabla_\mathbf{x}\times\int_\Gamma\mathbf{p}(\mathbf{y})G(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}]]
+Electric field | {% raw %}\[(\mathcal{E}(\mathbf{p}))(\mathbf{x})=\mathrm{i} k\int_\Gamma\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}-\frac1{\mathrm{i} k}\nabla_{\mathbf{x}}\int_\Gamma\nabla_{\Gamma}\cdot\mathbf{p}(\mathbf{y})G_k(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}\]{% endraw %}
+Magnetic field | {% raw %}\[(\mathcal{H}(\mathbf{p})(\mathbf{x})=\nabla_\mathbf{x}\times\int_\Gamma\mathbf{p}(\mathbf{y})G(\mathbf{x},\mathbf{y})\,\mathrm{d}\mathbf{y}\]{% endraw %}
 -------------- | ----------
 
 In each case, $G_k(\mathbf{x},\mathbf{y})$ is the Green's function for the Helmholtz equation

@@ -48,24 +48,25 @@
 \BOOKMARK [1][-]{section.7.3}{Assembling Operators using FMM}{chapter.7}% 48
 \BOOKMARK [-1][-]{part.4}{IV A Bempp User's Introduction to Boundary Element Methods}{}% 49
 \BOOKMARK [0][-]{chapter.8}{Function Spaces}{part.4}% 50
-\BOOKMARK [1][-]{subsection.8.0.1}{ Local vs global dofs}{chapter.8}% 51
-\BOOKMARK [1][-]{section.8.1}{Sobolev Spaces}{chapter.8}% 52
-\BOOKMARK [1][-]{section.8.2}{Discrete Function Spaces}{chapter.8}% 53
-\BOOKMARK [2][-]{subsection.8.2.1}{Degrees of Freedom \(DOFs\)}{section.8.2}% 54
-\BOOKMARK [2][-]{subsection.8.2.2}{Inf-sup Stability}{section.8.2}% 55
-\BOOKMARK [2][-]{subsection.8.2.3}{Interpolation and Projection}{section.8.2}% 56
-\BOOKMARK [0][-]{chapter.9}{Operators}{part.4}% 57
-\BOOKMARK [1][-]{section.9.1}{Potential Operators}{chapter.9}% 58
-\BOOKMARK [1][-]{section.9.2}{Boundary Operators}{chapter.9}% 59
-\BOOKMARK [1][-]{section.9.3}{The Calder\363n Projector}{chapter.9}% 60
-\BOOKMARK [0][-]{chapter.10}{Linear Solvers}{part.4}% 61
-\BOOKMARK [1][-]{section.10.1}{Direct Solvers}{chapter.10}% 62
-\BOOKMARK [1][-]{section.10.2}{Iterative Solvers}{chapter.10}% 63
-\BOOKMARK [2][-]{subsection.10.2.1}{Condition Numbers and Preconditioning}{section.10.2}% 64
-\BOOKMARK [0][-]{chapter.11}{Deriving BEM Formulations}{part.4}% 65
-\BOOKMARK [1][-]{section.11.1}{Deriving BEM Formulations for Laplace and Helmholtz Problems}{chapter.11}% 66
-\BOOKMARK [1][-]{section.11.2}{Deriving BEM Formulations for Maxwell Problems}{chapter.11}% 67
-\BOOKMARK [0][-]{chapter.12}{Avoiding Dense Matrices}{part.4}% 68
-\BOOKMARK [1][-]{section.12.1}{The Fast Multipole Method}{chapter.12}% 69
-\BOOKMARK [1][-]{section.12.2}{Hierarchical Matrices}{chapter.12}% 70
-\BOOKMARK [0][-]{chapter.13}{References and Further Reading}{part.4}% 71
+\BOOKMARK [1][-]{section.8.1}{Sobolev Spaces}{chapter.8}% 51
+\BOOKMARK [2][-]{subsection.8.1.1}{ Scalar function spaces}{section.8.1}% 52
+\BOOKMARK [2][-]{subsection.8.1.2}{ Vector function spaces}{section.8.1}% 53
+\BOOKMARK [1][-]{section.8.2}{Discrete Function Spaces}{chapter.8}% 54
+\BOOKMARK [2][-]{subsection.8.2.1}{Degrees of Freedom \(DOFs\)}{section.8.2}% 55
+\BOOKMARK [2][-]{subsection.8.2.2}{Inf-sup Stability}{section.8.2}% 56
+\BOOKMARK [2][-]{subsection.8.2.3}{Interpolation and Projection}{section.8.2}% 57
+\BOOKMARK [0][-]{chapter.9}{Operators}{part.4}% 58
+\BOOKMARK [1][-]{section.9.1}{Potential Operators}{chapter.9}% 59
+\BOOKMARK [1][-]{section.9.2}{Boundary Operators}{chapter.9}% 60
+\BOOKMARK [1][-]{section.9.3}{The Calder\363n Projector}{chapter.9}% 61
+\BOOKMARK [0][-]{chapter.10}{Linear Solvers}{part.4}% 62
+\BOOKMARK [1][-]{section.10.1}{Direct Solvers}{chapter.10}% 63
+\BOOKMARK [1][-]{section.10.2}{Iterative Solvers}{chapter.10}% 64
+\BOOKMARK [2][-]{subsection.10.2.1}{Condition Numbers and Preconditioning}{section.10.2}% 65
+\BOOKMARK [0][-]{chapter.11}{Deriving BEM Formulations}{part.4}% 66
+\BOOKMARK [1][-]{section.11.1}{Deriving BEM Formulations for Laplace and Helmholtz Problems}{chapter.11}% 67
+\BOOKMARK [1][-]{section.11.2}{Deriving BEM Formulations for Maxwell Problems}{chapter.11}% 68
+\BOOKMARK [0][-]{chapter.12}{Avoiding Dense Matrices}{part.4}% 69
+\BOOKMARK [1][-]{section.12.1}{The Fast Multipole Method}{chapter.12}% 70
+\BOOKMARK [1][-]{section.12.2}{Hierarchical Matrices}{chapter.12}% 71
+\BOOKMARK [0][-]{chapter.13}{References and Further Reading}{part.4}% 72
