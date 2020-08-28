@@ -8,8 +8,8 @@ below.
 -------------------- | ----------
 Operator             | Definition
 -------------------- | ----------
-Single layer         | {% raw %}\[(\mathcal{V}\mu)(\mathbf{x}) := \int_{\Gamma} G_k(\mathbf{x},\mathbf{y}) \mu(\mathbf{y})\,\mathrm{d}\mathbf{y}\]{% endraw %}
-Double layer         | {% raw %}\[(\mathcal{K}v)(\mathbf{x}) := \int_{\Gamma} \frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}} v(\mathbf{y})\,\mathrm{d}\mathbf{y}\]{% endraw %}
+Single layer         | {% raw %}[[(\mathcal{V}\mu)(\mathbf{x}) := \int_{\Gamma} G_k(\mathbf{x},\mathbf{y}) \mu(\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
+Double layer         | {% raw %}[[(\mathcal{K}v)(\mathbf{x}) := \int_{\Gamma} \frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}} v(\mathbf{y})\,\mathrm{d}\mathbf{y}]]{% endraw %}
 -------------------- | ----------
 
 

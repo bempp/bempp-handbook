@@ -63,10 +63,20 @@ def parse_markdown_tables(md):
 def markdown_to_tex(md, level):
     md = re.sub(r"###([^\n]+)\n", title(level + 2), md)
     md = re.sub(r"##([^\n]+)\n", title(level + 1), md)
+    md = md.replace("[[", "\\[")
+    md = md.replace("]]", "\\]")
+    while re.search(r"(```python[^`]*)\\\[([^`]*```)", md):
+        md = re.sub(r"(```python[^`]*)\\\[([^`]*```)", r"\1[[\2", md)
+    while re.search(r"(```python[^`]*)\\\]([^`]*```)", md):
+        md = re.sub(r"(```python[^`]*)\\\]([^`]*```)", r"\1]]\2", md)
     md = md.replace("```python", "\\begin{python}")
     md = md.replace("```", "\\end{python}")
     md = re.sub(r"`([^`]+)`", r"\\pyth{\1}", md)
     md = md.replace("&times;", "$\\times$")
+    md = md.replace("\\\\{", "\\{")
+    md = md.replace("\\\\}", "\\}")
+    md = md.replace("\\\\\\\\", "\\\\")
+    md = md.replace("{% raw %}", "")
     md = md.replace("{% raw %}", "")
     md = md.replace("{% endraw %}", "")
     md = re.sub(r"!\[([^\]]+)\]\(([^\)]+)\)(?:\{[^\}]+\})?",

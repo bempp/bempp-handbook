@@ -64,8 +64,8 @@ Frequently used formats with Bempp are `.msh` (Gmsh),
 ## Creating a grid from element data
 Bempp grids can be generated from arrays containing vertex coordinates and
 connectivity information. For example, to create a grid consisting of two
-triangles with vertices $\{(0, 0, 0), (1, 0, 0), (0, 1, 0)\}$ and
-$\{(1, 0, 0), (1, 1, 0), (0, 1, 0)\}$ we use the following commands:
+triangles with vertices $\\{(0, 0, 0), (1, 0, 0), (0, 1, 0)\\}$ and
+$\\{(1, 0, 0), (1, 1, 0), (0, 1, 0)\\}$ we use the following commands:
 
 ```python
 vertices = np.array(

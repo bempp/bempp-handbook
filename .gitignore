@@ -132,3 +132,5 @@ dmypy.json
 .pyre/
 
 .*.swp
+
+_pdf/handbook.*

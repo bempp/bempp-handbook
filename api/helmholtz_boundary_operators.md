@@ -8,10 +8,10 @@ below.
 -------------------- | ------------- | --------------
 Operator             | Symbol        | Matrix entries
 -------------------- | ------------- | --------------
-Single layer         | $\mathsf{V}$  | {% raw %}\[m_{ij}=\int_{\Gamma}\int_{\Gamma}G_k(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\]{% endraw %}
-Double layer         | $\mathsf{K}$  | {% raw %}\[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\]{% endraw %}
-Adjoint double layer | $\mathsf{K}'$ | {% raw %}\[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\]{% endraw %}
-Hypersingular        | $\mathsf{W}$  | {% raw %}\[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\]{% endraw %}
+Single layer         | $\mathsf{V}$  | {% raw %}[[m_{ij}=\int_{\Gamma}\int_{\Gamma}G_k(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}]]{% endraw %}
+Double layer         | $\mathsf{K}$  | {% raw %}[[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}]]{% endraw %}
+Adjoint double layer | $\mathsf{K}'$ | {% raw %}[[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}]]{% endraw %}
+Hypersingular        | $\mathsf{W}$  | {% raw %}[[m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}]]{% endraw %}
 -------------------- | ------------- | --------------
 
 In each case,  $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces (respectively),
